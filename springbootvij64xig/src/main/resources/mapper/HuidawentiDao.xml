@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.HuidawentiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.HuidawentiEntity" id="huidawentiMap">
+        <result property="guoshumingcheng" column="guoshumingcheng"/>
+        <result property="guoshuleixing" column="guoshuleixing"/>
+        <result property="shiyiwendu" column="shiyiwendu"/>
+        <result property="shiyishidu" column="shiyishidu"/>
+        <result property="zhongzhixiangqing" column="zhongzhixiangqing"/>
+        <result property="shiyiturang" column="shiyiturang"/>
+        <result property="guangaifangshi" column="guangaifangshi"/>
+        <result property="guoshutupian" column="guoshutupian"/>
+        <result property="zixunneirong" column="zixunneirong"/>
+        <result property="zixunshijian" column="zixunshijian"/>
+        <result property="nongchangzhanghao" column="nongchangzhanghao"/>
+        <result property="fuzeren" column="fuzeren"/>
+        <result property="zhuanjiazhanghao" column="zhuanjiazhanghao"/>
+        <result property="zhuanjiaxingming" column="zhuanjiaxingming"/>
+        <result property="jianyineirong" column="jianyineirong"/>
+        <result property="zhishipuji" column="zhishipuji"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.HuidawentiVO" >
+		SELECT * FROM huidawenti  huidawenti         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.HuidawentiVO" >
+		SELECT  huidawenti.* FROM huidawenti  huidawenti 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.HuidawentiView" >
+
+		SELECT  huidawenti.* FROM huidawenti  huidawenti 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.HuidawentiView" >
+		SELECT * FROM huidawenti  huidawenti <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+
+</mapper>
